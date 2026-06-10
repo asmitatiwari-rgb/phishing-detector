@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from flask import render_template
 import joblib
 import pandas as pd
 
@@ -8,9 +9,9 @@ CORS(app)
 
 model = joblib.load("phishing_model.pkl")
 
-@app.route("/")
+@app.route('/')
 def home():
-    return "🔥 AI Phishing Detection System Running"
+    return render_template("index.html")
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -28,4 +29,4 @@ def predict():
     return jsonify({"result": result})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+   app.run(debug=True, host="0.0.0.0", port=5000)
