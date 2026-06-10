@@ -117,14 +117,27 @@ http://127.0.0.1:5000
 
 ## Results
 
-Test Cases:
+## Results
 
-* amazon.in → Safe Website
-* secure-paytm-login-update.xyz → Phishing Website
+### Test Cases
+
+* amazon.in → Safe Website ✅
+* secure-paytm-login-update.xyz → Phishing Website ❌
 
 The system successfully classified both legitimate and phishing URLs.
 
----
+### Safe Website Detection
+
+![Safe Website Result](safe_result.png)
+
+The model correctly identified **amazon.in** as a legitimate website.
+
+### Phishing Website Detection
+
+![Phishing Website Result](phishing_result.png)
+
+The model correctly detected **secure-paytm-login-update.xyz** as a phishing website based on suspicious URL patterns.
+
 
 ## Future Scope
 
